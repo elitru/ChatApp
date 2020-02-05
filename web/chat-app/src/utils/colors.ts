@@ -1,7 +1,36 @@
 export default class Colors {
-    public static readonly ORANGE: string = '#f15025';
-    public static readonly DARK: string = '#191919';
-    public static readonly LIGHT_SUPER: string = '#ffffff';
-    public static readonly LIGHT: string = '#e6e8e6';
-    public static readonly LIGHT_MEDIUM: string = '#ced0ce';
+
+    public static readonly THEME_LIGHT: object = {
+        '--color-pri-1': '#3835fc',
+        '--color-pri-2': '#5d55fa',
+        '--color-pri-3': '#7d7fd3',
+        '--color-pri-4': '#a7a5f4',
+        '--color-sec-1': '#1A334B',
+        '--color-sec-2': '#e7edf3',
+        '--color-fg-very-dark': '#1A334B',
+        '--color-fg-dark': '#2a4b6c',
+        '--color-fg-light': '#ffffff'
+    };
+
+    //TODO: implement more themes
+
+    public static load(theme: ColorTheme = ColorTheme.LIGHT): void{
+        let usedTheme: any;
+
+        switch(theme){
+            case ColorTheme.LIGHT:
+                usedTheme = Colors.THEME_LIGHT
+                break;
+        }
+
+        Object.keys(usedTheme).map(key => {
+            const value = usedTheme[key];
+            document.documentElement.style.setProperty(key, value);
+        });
+    }
+}
+
+export enum ColorTheme{
+    LIGHT,
+    DARK
 }
