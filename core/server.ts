@@ -1,17 +1,17 @@
-import express from "express";
-import * as socketio from "socket.io";
-import * as path from "path";
+import express from 'express';
+import socketIO from 'socket.io';
+import path from 'path';
 
 const app = express();
-const http = require("http").Server(app);
-const io = require("socket.io")(http);
+const http = require('http').Server(app);
+const io = socketIO(http);
 
-app.use(express.static('../web'));
+app.use(express.static('../web/chat-app/public'));
 
-io.on("connection", function(socket: any) {
-  console.log("a user connected");
+io.on('connection', function(socket: socketIO.Socket) {
+  
 });
 
 const server = http.listen(12345, function() {
-  console.log("listening on *:12345");
+  console.log('listening on *:12345');
 });
