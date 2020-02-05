@@ -16,7 +16,7 @@ const Authenticate = () => {
             <Router>
                 <Switch>
                     <Route path="/authenticate/signin" render={(props) => <Login {...props} loader={{showLoader, hideLoader}} />} />
-                    <Route path="/authenticate/signup" render={(props) => <Login {...props} loader={{showLoader, hideLoader}} />} />
+                    <Route path="/authenticate/signup" render={(props) => <Register {...props} loader={{showLoader, hideLoader}} />} />
                 </Switch>
             </Router>
         </div>

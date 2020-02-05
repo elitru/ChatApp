@@ -37,8 +37,7 @@ class Login extends React.Component<{loader: LoaderType}, LoginState> {
     }
 
     private onLogin = (): void => {
-        console.log(this.state.username)
-        console.log(this.state.password)
+        this.loader.showLoader();
     };
 
     render(){
