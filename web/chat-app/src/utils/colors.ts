@@ -9,7 +9,8 @@ export default class Colors {
         '--color-sec-2': '#e7edf3',
         '--color-fg-very-dark': '#1A334B',
         '--color-fg-dark': '#2a4b6c',
-        '--color-fg-light': '#ffffff'
+        '--color-fg-light': '#ffffff',
+        '--color-error': '#cb564f'
     };
 
     //TODO: implement more themes

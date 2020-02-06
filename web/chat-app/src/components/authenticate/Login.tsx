@@ -4,6 +4,11 @@ import style from './Authenticate.module.css';
 import Images from '../../utils/images';
 import LoaderType from '../../models/LoaderType';
 import LoginState from '../../models/states/LoginState';
+import API, { URLS } from '../../api/api';
+import StorageKeys from '../../utils/storage-keys';
+import LoginRequest from '../../models/requests/LoginRequest';
+import LoginResponse from '../../models/responses/LoginResponse';
+import ErrorResponse from '../../models/responses/ErrorResponse';
 
 class Login extends React.Component<{loader: LoaderType}, LoginState> {
     private loader: LoaderType;
@@ -14,7 +19,8 @@ class Login extends React.Component<{loader: LoaderType}, LoginState> {
         
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            error: ''
         };
 
         this.onUsernameChange = this.onUsernameChange.bind(this);
@@ -25,19 +31,42 @@ class Login extends React.Component<{loader: LoaderType}, LoginState> {
     private onUsernameChange(event: ChangeEvent<HTMLInputElement>): void{
         this.setState({
             username: event.target.value,
-            password: this.state.password
+            password: this.state.password,
+            error: this.state.error
         });
     }
 
     private onPaswordChange(event: ChangeEvent<HTMLInputElement>): void{
         this.setState({
             username: this.state.username,
-            password: event.target.value
+            password: event.target.value,
+            error: this.state.error
         });
     }
 
     private onLogin = (): void => {
+        if(this.state.username === '' && this.state.password === ''){
+            return;
+        }
+
+        const request: LoginRequest = new LoginRequest(this.state.username, this.state.password);
+
         this.loader.showLoader();
+        API.post(URLS.LOGIN, request,
+        (result: LoginResponse) => {
+            this.loader.hideLoader();
+            localStorage.setItem(StorageKeys.TOKEN, result.token);
+            localStorage.setItem(StorageKeys.USER, JSON.stringify(result.user));
+            //TODO: forward to chat
+            // const props: any = this.props;
+            // props.history.push('/');
+        },
+        (err: ErrorResponse) => {
+            const state: any = this.state;
+            state.error = err.errorMesage;
+            this.setState(state);
+            this.loader.hideLoader();
+        });
     };
 
     render(){
@@ -55,7 +84,12 @@ class Login extends React.Component<{loader: LoaderType}, LoginState> {
                 </div>
                 <div className={style.input}>
                     <span>Password</span>
-                    <input value={this.state.password} type="text" placeholder="e.g. ●●●●●●●●●●●" onChange={this.onPaswordChange} />
+                    <input value={this.state.password} type="password" placeholder="e.g. ●●●●●●●●●●●" onChange={this.onPaswordChange} />
+                </div>
+                <div>
+                    <p className={style.error}>
+                        {this.state.error}
+                    </p>
                 </div>
                 <div>
                     <button onClick={this.onLogin}>Login</button>

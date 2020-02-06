@@ -75,3 +75,12 @@ button{
 button:hover{
   background: var(--color-pri-2);
 }
+
+input[type="button"],
+button{
+  outline:none;
+}
+input[type="button"]::-moz-focus-inner,
+button::-moz-focus-inner{
+  border: 0;
+}

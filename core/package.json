@@ -5,18 +5,27 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon dist/server.js"
+    "dev": "nodemon dist/core/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "password-hash": "^1.2.2",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.6",
     "@types/express": "^4.17.2",
+    "@types/jsonwebtoken": "^8.3.7",
+    "@types/mysql": "^2.15.8",
+    "@types/password-hash": "^1.2.20",
     "@types/socket.io": "^2.1.4"
   }
 }
