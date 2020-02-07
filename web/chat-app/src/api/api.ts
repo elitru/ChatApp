@@ -45,7 +45,7 @@ export default class API{
 }
 
 export class URLS{
-    private static PORT: number = 12345;
+    private static PORT: number = 3500;
     private static readonly BASE: string = 'http://localhost:' + URLS.PORT + '/';
 
     public static readonly LOGIN: string = URLS.BASE + 'user/login';

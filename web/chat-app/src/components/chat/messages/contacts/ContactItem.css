@@ -1,0 +1,7 @@
+.contactItem{
+    width: calc(100% - 40px);
+    height: auto;
+    padding: 20px;
+    background: var(--color-sec-3);
+    border-bottom: solid 1px var(--color-sec-2);
+}

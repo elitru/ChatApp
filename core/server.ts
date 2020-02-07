@@ -23,6 +23,6 @@ io.on('connection', function(socket: socketIO.Socket) {
   
 });
 
-const server = http.listen(12345, function() {
-  console.log('listening on *:12345');
+const server = http.listen(3500, function() {
+  console.log('listening on *:3500');
 });

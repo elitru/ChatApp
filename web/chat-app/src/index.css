@@ -77,10 +77,15 @@ button:hover{
 }
 
 input[type="button"],
-button{
+button,
+li,
+a{
   outline:none;
 }
+
 input[type="button"]::-moz-focus-inner,
-button::-moz-focus-inner{
+button::-moz-focus-inner,
+li::-moz-focus-inner,
+a::-moz-focus-inner{
   border: 0;
 }

@@ -57,9 +57,8 @@ class Login extends React.Component<{loader: LoaderType}, LoginState> {
             this.loader.hideLoader();
             localStorage.setItem(StorageKeys.TOKEN, result.token);
             localStorage.setItem(StorageKeys.USER, JSON.stringify(result.user));
-            //TODO: forward to chat
-            // const props: any = this.props;
-            // props.history.push('/');
+            const props: any = this.props;
+            props.history.push('/chat/messages');
         },
         (err: ErrorResponse) => {
             const state: any = this.state;

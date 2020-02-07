@@ -21,6 +21,6 @@ app.post('/user/register', user_requests_1.default.register);
 //socket routes
 io.on('connection', function (socket) {
 });
-var server = http.listen(12345, function () {
-    console.log('listening on *:12345');
+var server = http.listen(3500, function () {
+    console.log('listening on *:3500');
 });

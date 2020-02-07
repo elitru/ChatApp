@@ -1,0 +1,22 @@
+.messages{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+.contacts{
+    min-width: 300px;
+    max-width: 500px;
+    width: 20%;
+    height: 100%;
+    border-right: solid 1px var(--color-sec-2);
+}
+
+.chat-area{
+    width: 100%;
+    height: 100%;
+}

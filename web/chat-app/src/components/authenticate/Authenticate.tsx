@@ -6,9 +6,11 @@ import Login from './Login';
 import Register from './Register';
 import Loader from '../loader/redirect/Loader';
 
-const Authenticate = () => {
+const Authenticate = (props: any) => {
 
-    const [loader, showLoader, hideLoader] = Loader();
+    const loader = props.loader;
+    const showLoader = props.showLoader;
+    const hideLoader = props.hideLoader;
 
     return (
         <div className={style.authenticate}>

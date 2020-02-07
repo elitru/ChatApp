@@ -7,6 +7,7 @@ export default class Colors {
         '--color-pri-4': '#a7a5f4',
         '--color-sec-1': '#1A334B',
         '--color-sec-2': '#e7edf3',
+        '--color-sec-3': '#fff',
         '--color-fg-very-dark': '#1A334B',
         '--color-fg-dark': '#2a4b6c',
         '--color-fg-light': '#ffffff',
