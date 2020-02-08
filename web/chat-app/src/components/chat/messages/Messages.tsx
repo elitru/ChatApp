@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Messages.css';
 import LoaderType from '../../../models/LoaderType';
 import Contacts from './contacts/Contacts';
+import ChatArea from './chat-area/ChatArea';
 
 class Messages extends Component<{ loader: LoaderType }>{
 
@@ -19,7 +20,7 @@ class Messages extends Component<{ loader: LoaderType }>{
                     <Contacts />
                 </div>
                 <div className="chat-area">
-
+                    <ChatArea />
                 </div>
             </div>
         );

@@ -1,0 +1,57 @@
+.chat-area{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;   
+}
+
+.message-area{
+    width: 100%;
+    height: 100%;
+}
+
+.editor{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.chat-area .emojis{
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.chat-area .emojis:hover svg{
+    color: var(--color-pri-3);
+}
+
+.chat-area .emojis svg{
+    color: var(--color-pri-1);
+    font-size: 24px;
+    transition: all 300ms;
+}
+
+.chat-area .input{
+    width: 100%;
+    margin: 10px 30px;
+}
+
+.chat-area .input textarea{
+    width: 100%;
+    height: 56px;
+    padding: 10px;
+    resize: none;
+}
+
+.chat-area .editor button{
+    width: 150px;
+    height: 76px;
+    margin: 10px 15px;
+    margin-left: 5px;
+}
