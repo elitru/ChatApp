@@ -5,13 +5,15 @@ export default class Colors {
         '--color-pri-2': '#5d55fa',
         '--color-pri-3': '#7d7fd3',
         '--color-pri-4': '#a7a5f4',
-        '--color-sec-1': '#1A334B',
+        '--color-sec-1': '#f3f8fc', //1A334B
         '--color-sec-2': '#e7edf3',
         '--color-sec-3': '#fff',
         '--color-fg-very-dark': '#1A334B',
         '--color-fg-dark': '#2a4b6c',
         '--color-fg-light': '#ffffff',
-        '--color-error': '#cb564f'
+        '--color-error': '#cb564f',
+        '--color-no-profile-img': '#c2cad3',
+        '--color-box-shadow': '#9eaebd'
     };
 
     //TODO: implement more themes

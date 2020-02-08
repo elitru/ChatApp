@@ -4,9 +4,9 @@
     max-width: 100%;
     overflow: auto;
     overflow-x: hidden;
-    background: var(--color-sec-3);
+    background: var(--color-sec-1);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     align-content: center;
     flex-direction: column;
